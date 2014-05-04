@@ -1,0 +1,52 @@
+<%= form_for @producto, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :sku, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :sku, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :umedida_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :umedida_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :nombre, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nombre, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :stock_minimo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :stock_minimo, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= label_tag 'Categorias', nil, :class => 'control-label' %>
+    <div class="controls">
+      <%= select_tag 'categorie_id', options_from_collection_for_select(@categories,'id', 'nombre'), include_blank: true %>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <%= f.label :stock_critico, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :stock_critico, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :estado, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :estado, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                productos_path, :class => 'btn' %>
+  </div>
+<% end %>

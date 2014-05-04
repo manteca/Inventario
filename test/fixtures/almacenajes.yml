@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bodega_id: 1
+  producto_id: 
+  cantidad: 1
+
+two:
+  bodega_id: 1
+  producto_id: 
+  cantidad: 1

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sku: MyString
+  umedida_id: 1
+  nombre: MyString
+  stock_minimo: 
+  stock_critico: 1
+  estado: false
+
+two:
+  sku: MyString
+  umedida_id: 1
+  nombre: MyString
+  stock_minimo: 
+  stock_critico: 1
+  estado: false

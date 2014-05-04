@@ -1,0 +1,35 @@
+<%- model_class = Category -%>
+<div class="page-header">
+  <!--h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1-->
+  <h1><%= @category.nil? ? 'Main categories' : @category.nombre %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:nombre) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= link_to category.id, category_path(category) %></td>
+        <td><%= link_to category.nombre, category_path(category) %></td>
+        <td>
+          <%= link_to 'Edit', edit_category_path(category ) %>
+          <%= link_to 'Destroy', category_path(category), :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            (@category.nil? ? new_category_path : new_category_path(@category)),
+            :class => 'btn btn-primary' %>
+<% unless @category.nil? %>
+<%= link_to 'Back', 
+            (@category.parent.nil? ? categories_path : category_path(@category.parent) unless @category.nil?),
+            :class => 'btn btn-default' %>
+<% end %>
+
