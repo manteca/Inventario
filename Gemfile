@@ -45,7 +45,6 @@ end
 # gem 'debugger', group: [:development, :test]
 #################
 
-gem 'pg'
 gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
@@ -56,6 +55,7 @@ gem 'devise'
 ## Debug
 group :development do
   gem 'meta_request'
+  gem 'rack-mini-profiler'
   #gem "better_errors"
   #gem "binding_of_caller"
   #gem "pry-rails"
