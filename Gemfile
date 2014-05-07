@@ -47,7 +47,15 @@ end
 
 gem 'therubyracer'
 gem 'less-rails'
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails' 
+## rails g bootstrap:install less
+## rails g bootstrap:layout [LAYOUT_NAME] [*fixed or fluid]
+## rails g bootstrap:themed [RESOURCE_NAME]
+## Example:
+##   rails g scaffold Post title:string description:text
+##   rake db:migrate
+##   rails g bootstrap:themed Posts
+
 #gem 'acts-as-taggable-on'
 gem 'awesome_nested_set'
 gem 'devise'
