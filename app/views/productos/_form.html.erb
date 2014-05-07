@@ -26,7 +26,7 @@
   <div class="control-group">
     <%= label_tag 'Categorias', nil, :class => 'control-label' %>
     <div class="controls">
-      <%= select_tag 'categorie_id', options_from_collection_for_select(@categories,'id', 'nombre'), include_blank: true %>
+      <%= select_tag 'producto[category_id]', options_from_collection_for_select(@categories,'id', 'nombre'), include_blank: true %>
     </div>
   </div>
   

@@ -24,9 +24,9 @@ class ProductosController < ApplicationController
   # POST /productos
   # POST /productos.json
   def create
-    #@producto = Producto.new(producto_params)
-    raise params[:tagsproducto_list] 
-    @producto.tagsproducto_list = params[:tagsproducto_list] 
+    @producto = Producto.new(producto_params)
+    #raise params[:tagsproducto_list] 
+    #@producto.tagsproducto_list = params[:tagsproducto_list] 
 
     respond_to do |format|
       if @producto.save
@@ -74,7 +74,7 @@ class ProductosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def producto_params
-      params.require(:producto).permit(:sku, :umedida_id, :nombre, :stock_minimo, :stock_critico, :estado, :categorie_id)
+      params.require(:producto).permit(:sku, :umedida_id, :nombre, :stock_minimo, :stock_critico, :estado, :category_id)
     end
 
     def set_categorias
