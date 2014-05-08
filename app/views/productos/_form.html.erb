@@ -18,15 +18,15 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :stock_minimo, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :stock_minimo, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
     <%= label_tag 'Categorias', nil, :class => 'control-label' %>
     <div class="controls">
       <%= select_tag 'producto[category_id]', options_from_collection_for_select(@categories,'id', 'nombre'), include_blank: true %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :stock_minimo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :stock_minimo, :class => 'text_field' %>
     </div>
   </div>
   
