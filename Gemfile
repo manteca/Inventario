@@ -45,8 +45,8 @@ end
 # gem 'debugger', group: [:development, :test]
 #################
 
-gem 'therubyracer'
-gem 'less-rails'
+gem 'therubyracer' # para bootstrap
+gem 'less-rails' # para bootstrap
 gem 'twitter-bootstrap-rails' 
 ## rails g bootstrap:install less
 ## rails g bootstrap:layout [LAYOUT_NAME] [*fixed or fluid]
@@ -57,13 +57,16 @@ gem 'twitter-bootstrap-rails'
 ##   rails g bootstrap:themed Posts
 
 #gem 'acts-as-taggable-on'
-gem 'awesome_nested_set'
-gem 'devise'
+gem 'awesome_nested_set' # para las cetegorias
+gem 'devise' # para el control de usuarios
+#gem 'formtastic' # para facilitar el desarrollo de los formularios  
+## rails g formtastic:install
+gem 'simple_form'
 
 ## Debug
 group :development do
-  gem 'meta_request'
-  gem 'rack-mini-profiler'
+  gem 'meta_request' # debug en Chrome
+  gem 'rack-mini-profiler' # debug Toolbar
   #gem "better_errors"
   #gem "binding_of_caller"
   #gem "pry-rails"
