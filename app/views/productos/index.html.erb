@@ -6,11 +6,11 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:sku) %></th>
-      <th><%= model_class.human_attribute_name(:umedida_id) %></th>
       <th><%= model_class.human_attribute_name(:nombre) %></th>
+      <th><%= model_class.human_attribute_name(:umedida_id) %></th>
       <th><%= model_class.human_attribute_name(:stock_minimo) %></th>
       <th><%= model_class.human_attribute_name(:stock_critico) %></th>
+      <th><%= model_class.human_attribute_name(:costo) %></th>
       <th><%= model_class.human_attribute_name(:estado) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -20,11 +20,11 @@
     <% @productos.each do |producto| %>
       <tr>
         <td><%= link_to producto.id, producto_path(producto) %></td>
-        <td><%= producto.sku %></td>
-        <td><%= producto.umedida_id %></td>
         <td><%= producto.nombre %></td>
+        <td><%= producto.umedida_id %></td>
         <td><%= producto.stock_minimo %></td>
         <td><%= producto.stock_critico %></td>
+        <td><%= currency_cl(producto.costo) %></td>
         <td><%= producto.estado %></td>
         <td><%=l producto.created_at %></td>
         <td>

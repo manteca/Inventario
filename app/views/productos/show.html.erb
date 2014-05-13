@@ -6,17 +6,23 @@
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:sku) %>:</strong></dt>
   <dd><%= @producto.sku %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:umedida_id) %>:</strong></dt>
-  <dd><%= @producto.umedida_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:nombre) %>:</strong></dt>
   <dd><%= @producto.nombre %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:umedida_id) %>:</strong></dt>
+  <dd><%= @producto.umedida.nombre %></dd>  
+  <dt><strong><%= model_class.human_attribute_name(:category) %>:</strong></dt>
+  <dd><%= @producto.category.nombre unless @producto.category.nil? %></dd>
   <dt><strong><%= model_class.human_attribute_name(:stock_minimo) %>:</strong></dt>
   <dd><%= @producto.stock_minimo %></dd>
   <dt><strong><%= model_class.human_attribute_name(:stock_critico) %>:</strong></dt>
   <dd><%= @producto.stock_critico %></dd>
+
+  <dt><strong><%= model_class.human_attribute_name(:costo) %>:</strong></dt>
+  <dd><%= currency_cl(@producto.costo) %></dd>
+
   <dt><strong><%= model_class.human_attribute_name(:estado) %>:</strong></dt>
   <dd><%= @producto.estado %></dd>
-  
+</dl>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
