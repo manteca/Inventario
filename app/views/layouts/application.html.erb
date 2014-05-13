@@ -55,6 +55,7 @@
               <li><%= link_to "Umedidas", umedidas_path  %></li>
               <li><%= link_to "Comunas", comunas_path  %></li>
               <li><%= link_to "Categorias", categories_path  %></li>
+              <li><%= link_to "Inventario", invents_path  %></li>
             </ul>
             <p class="navbar-text"><%= current_user.email %>
             <%= link_to "Salir", destroy_user_session_path, method: :delete, class: 'navbar-text' %>
