@@ -1,9 +1,13 @@
 Inventario::Application.routes.draw do
+  get '/invents/categoria/:id', to: 'invents#products', as: 'invents_products'
+  resources :invents
+
   match '/users',   to: 'users#index',   via: 'get'
   devise_for :users
   resources :categories
   root :to => 'home#index'
   resources :dashboard
+
   resources :productos
   resources :comunas
   resources :umedidas

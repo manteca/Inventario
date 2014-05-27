@@ -9,4 +9,13 @@
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 invents_path, :class => 'btn' %>
   </div>
+  
+  <ul>
+    <% @categories.each do |c| %>
+      <li><%= link_to c.nombre, invents_products_path(1), remote: true %></li>
+    <% end %>
+  </ul>
+  <div id="categorias">
+  </div>
+  <%= debug(@ttt) %>
 <% end %>

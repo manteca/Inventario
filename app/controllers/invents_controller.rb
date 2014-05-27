@@ -15,6 +15,8 @@ class InventsController < ApplicationController
   # GET /invents/new
   def new
     @invent = Invent.new
+    category_parent = Category.where(nombre: 'Productos').first
+    @categories = Category.where(parent_id: category_parent.id)
   end
 
   # GET /invents/1/edit
@@ -59,6 +61,10 @@ class InventsController < ApplicationController
       format.html { redirect_to invents_url }
       format.json { head :no_content }
     end
+  end
+
+  def products
+    @ttt = 'alo'
   end
 
   private
